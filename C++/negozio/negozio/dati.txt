@@ -1,0 +1,11 @@
+Dimensioni-X:20
+Dimensioni-Y:20
+Numero-entrate:5
+Numero-uscite:4
+Numero-clienti:25
+Tempo-massimo-arrivo:5
+Tempo-minimo-movimento:200000
+Tempo-massimo-movimento:500000
+Percentuale-decisione-uscita:100
+Clienti-massimo:4
+Debug:0
