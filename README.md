@@ -1,4 +1,27 @@
-Per la versione in C Bisogna cambiare il valore delle define, mentre per il C++ basta aprire il file txt  e modificare i valori dopo i due punti (':'), di seguito riporto le varie indicazioni
+ESERCIZIO<br>
+
+Per consentire l’osservanza delle norme anti-assembramento ai tempi del COVID-19, un negozio
+dispone di un software per il controllo degli accessi ai suoi clienti. In particolare, viene
+consentito l’accesso automatico a pochi clienti per volta, in base alle caratteristiche dello
+stabile e al rischio di contagio. Utilizzando le funzioni della programmazione multithreading del
+linguaggio C, implementare un programma che dati N clienti che in momenti diversi intendono
+entrare in negozio e M pass elettronici disponibili, venga monitorato l’accesso al negozio ad un
+massimo di M clienti per volta, in modo tale che ciascuno degli altri N-M clienti in coda possa
+accedere allo stabile soltanto quando uno degli M clienti abbia rilasciato il pass all’uscita dal
+negozio.<br><br>
+
+LIVELLO BASE<br>
+Realizzare una soluzione del problema in linguaggio C mediante il ricorso ai thread e scrivere
+una relazione che spieghi la strategia risolutiva e i dettagli progettuali e implementativi.<br><br>
+
+LIVELLO AVANZATO<br>
+Il titolare del negozio decide di ampliare il locale prevedendo di conseguenza una gestione di
+più punti di accesso simultanei di entrata nel negozio. Prevedere una nuova gestione degli accessi
+al negozio mediante NUM_PORTE_DI_ACCESSO > 1, ricorrendo ad una programmazione
+multithreading sincronizzata. Scrivere in una relazione la strategia risolutiva e i dettagli
+progettuali e implementativi di questa nuova soluzione.<br><br>
+
+Per la versione in C Bisogna cambiare il valore delle define, mentre per il C++ basta aprire il file txt  e modificare i valori dopo i due punti (':'), di seguito riporto le varie indicazioni<br>
 
 Dimensioni-X -> Dimensioni del lato X<br>
 Dimensioni-Y -> Dimensioni del lato Y<br>
