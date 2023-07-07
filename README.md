@@ -1,51 +1,125 @@
-ESERCIZIO<br>
+# Negozio-AI
 
-Per consentire l’osservanza delle norme anti-assembramento ai tempi del COVID-19, un negozio
-dispone di un software per il controllo degli accessi ai suoi clienti. In particolare, viene
-consentito l’accesso automatico a pochi clienti per volta, in base alle caratteristiche dello
-stabile e al rischio di contagio. Utilizzando le funzioni della programmazione multithreading del
-linguaggio C, implementare un programma che dati N clienti che in momenti diversi intendono
-entrare in negozio e M pass elettronici disponibili, venga monitorato l’accesso al negozio ad un
-massimo di M clienti per volta, in modo tale che ciascuno degli altri N-M clienti in coda possa
-accedere allo stabile soltanto quando uno degli M clienti abbia rilasciato il pass all’uscita dal
-negozio.<br><br>
+Questo progetto offre una soluzione di programmazione multithreading in linguaggio C per il controllo degli accessi al negozio, consentendo il rispetto delle norme anti-assembramento durante la pandemia di COVID-19.
 
-LIVELLO BASE<br>
-Realizzare una soluzione del problema in linguaggio C mediante il ricorso ai thread e scrivere
-una relazione che spieghi la strategia risolutiva e i dettagli progettuali e implementativi.<br><br>
+## Descrizione
 
-LIVELLO AVANZATO<br>
-Il titolare del negozio decide di ampliare il locale prevedendo di conseguenza una gestione di
-più punti di accesso simultanei di entrata nel negozio. Prevedere una nuova gestione degli accessi
-al negozio mediante NUM_PORTE_DI_ACCESSO > 1, ricorrendo ad una programmazione
-multithreading sincronizzata. Scrivere in una relazione la strategia risolutiva e i dettagli
-progettuali e implementativi di questa nuova soluzione.<br><br>
+Il software sviluppato per questo progetto permette di gestire l'accesso dei clienti al negozio in modo automatico, consentendo l'accesso a un numero limitato di clienti alla volta, in base alle caratteristiche dello stabile e al rischio di contagio.
 
-Per la versione in C Bisogna cambiare il valore delle define, mentre per il C++ basta aprire il file txt  e modificare i valori dopo i due punti (':'), di seguito riporto le varie indicazioni<br>
+Il progetto è suddiviso in due livelli di complessità:
 
-Dimensioni-X -> Dimensioni del lato X<br>
-Dimensioni-Y -> Dimensioni del lato Y<br>
-Numero-entrate -> Numero di entrate che si voglio avere nel negozio e sarà anche per il numero di code.<br>
-Numero-uscite -> Relativo al numero di uscite che si voglio avere nel negozio<br>
-Numero-clienti -> Numero di clienti che deve generare il programma (un numero troppo altro potrebbe causare delle instabilità del sistema)<br>
-Tempo-massimo-arrivo -> Tempo del cliente di presa posizione dopo la sua nascita<br>
-Tempo-minimo/massimo-movimento -> indicati i valori in microsecondi per gli spostamenti della persona<br>
-Percentuale-decisione-uscita -> range per la percentuale di uscita (la percentuale che possa uscite 1)<br>
-Clienti-massimo -> all'interno del negozio nello stesso momento<br>
-Debug -> 0 = Normale | 1 = Senza grafica | 2 = debug console<br>
+- **Livello Base**: Implementazione di una soluzione con un singolo punto di accesso.
+- **Livello Avanzato**: Implementazione di una soluzione con più punti di accesso simultanei.
+
+## Livello Base
+
+La soluzione di base prevede l'utilizzo di thread in linguaggio C per controllare gli accessi al negozio. Viene gestito un singolo punto di accesso, e il programma monitora il numero di clienti presenti nel negozio, consentendo l'accesso solo a un numero massimo di clienti contemporaneamente. Per maggiori dettagli sulla soluzione implementata, consulta la relazione nel file [relazione_base.md](./relazione_base.md).
+
+## Livello Avanzato
+
+La soluzione avanzata prevede una gestione di più punti di accesso simultanei al negozio. In questo modo, il programma può consentire l'accesso a un maggior numero di clienti contemporaneamente, riducendo gli assembramenti alle entrate. Per maggiori dettagli sulla soluzione implementata, consulta la relazione nel file [relazione_avanzata.md](./relazione_avanzata.md).
+
+## Relazioni
+
+- [Relazione Livello Base](./relazione_base.md): Descrizione dettagliata della strategia risolutiva e dei dettagli progettuali e implementativi per il livello base.
+- [Relazione Livello Avanzato](./relazione_avanzata.md): Descrizione dettagliata della strategia risolutiva e dei dettagli progettuali e implementativi per il livello avanzato.
+
+## Istruzioni per l'esecuzione
+
+1. Assicurarsi di avere un compilatore C installato sul proprio sistema.
+2. Clonare il repository Negozio-AI.
+3. Compilare il programma utilizzando il comando:
+   ```
+   gcc -pthread main.c -o negozio
+   ```
+4. Eseguire il programma con il comando:
+   ```
+   ./negozio
+   ```
+   Seguire le istruzioni sullo schermo per interagire con il programma.
 
 
---------------------<br>
-RETURN VALUE<br>
-Return 1 -> Lato x troppo piccolo<br>
-Return 2 -> Lato y troppo piccolo<br>
-Return 3 -> Numero di entrate troppo piccolo<br>
-Return 4 -> Numero di uscite troppo piccolo<br>
-Return 5 -> Numero di clienti troppo piccolo<br>
-Return 6 -> Tempo massimo di arrivo troppo piccolo<br>
-Return 7 -> Tempo di movimento minimo < 200000<br>
-Return 8 -> Tempo di movimento massimo troppo piccolo<br>
-Return 9 -> Numero di clienti massimo troppo piccolo<br>
-Return 10 -> Debug valore non impostato<br>
-Return 11 -> Numero di clienti massimo non valido<br>
-Return 12 -> Numero di entrate + uscite non valido<br>
+Certamente! Di seguito troverai le istruzioni per la modifica dei valori di configurazione sia per la versione in C che per la versione in C++. Queste istruzioni possono essere incluse nel file README.md del tuo progetto utilizzando la sintassi del linguaggio Markdown.
+
+## Modifica dei valori di configurazione
+
+Per personalizzare il comportamento del programma, puoi modificare i valori di configurazione nel codice sorgente o nel file di testo fornito, a seconda della versione del linguaggio che stai utilizzando.
+
+### Versione in C
+
+Per la versione in C, è possibile modificare direttamente le definizioni dei valori di configurazione nel codice sorgente. Apri il file sorgente `main.c` e cerca le seguenti definizioni:
+
+```c
+#define Numero-clienti 100
+#define Tempo-massimo-arrivo 500000
+#define Tempo-minimo-movimento 200000
+#define Tempo-massimo-movimento 500000
+#define Percentuale-decisione-uscita 0.5
+#define Clienti-massimo 10
+#define Debug 0
+```
+
+Modifica i valori secondo le tue preferenze. Ad esempio:
+
+```c
+#define Numero-clienti 50
+#define Tempo-massimo-arrivo 300000
+#define Tempo-minimo-movimento 100000
+#define Tempo-massimo-movimento 400000
+#define Percentuale-decisione-uscita 0.3
+#define Clienti-massimo 5
+#define Debug 1
+```
+
+Salva le modifiche e riavvia il programma.
+
+### Versione in C++
+
+Per la versione in C++, puoi modificare i valori di configurazione nel file di testo fornito. Apri il file `dati.txt` e trova le seguenti linee:
+
+```
+Numero-clienti: 100
+Tempo-massimo-arrivo: 500000
+Tempo-minimo-movimento: 200000
+Tempo-massimo-movimento: 500000
+Percentuale-decisione-uscita: 0.5
+Clienti-massimo: 10
+Debug: 0
+```
+
+Modifica i valori dopo i due punti (':') secondo le tue preferenze. Ad esempio:
+
+```
+Numero-clienti: 50
+Tempo-massimo-arrivo: 300000
+Tempo-minimo-movimento: 100000
+Tempo-massimo-movimento: 400000
+Percentuale-decisione-uscita: 0.3
+Clienti-massimo: 5
+Debug: 1
+```
+
+Salva le modifiche e riavvia il programma.
+
+## Contributi
+
+Sono benvenuti contributi e miglioramenti a questo progetto! Se desideri contribuire, segui le seguenti istruzioni:
+
+1. Forka il repository.
+2. Crea un nuovo branch per le tue modifiche:
+   ```
+   git checkout -b miglioramenti
+   ```
+3. Effettua le modifiche e commita i tuoi cambiamenti:
+   ```
+   git commit -m "Aggiunti miglioramenti al thread di controllo"
+   ```
+4. Pusha il tuo branch:
+   ```
+   git push origin miglioramenti
+   ```
+5. Apri una Pull Request nel repository originale.
+
+## Licenza
+
+Questo progetto è distribuito con la licenza MIT.
