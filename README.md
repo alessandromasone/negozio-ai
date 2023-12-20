@@ -1,4 +1,4 @@
-# Negozio-AI
+# Negozio AI
 
 Questo progetto offre una soluzione di programmazione multithreading in linguaggio C per il controllo degli accessi al negozio, consentendo il rispetto delle norme anti-assembramento durante la pandemia di COVID-19.
 
